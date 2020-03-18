@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  border: 1px solid #053456;
+  width: 24%;
+  min-width: 140px;
+  padding: 20px 20px;
+  margin: 50px 5px;
+
+  h3 {
+    color: #053456;
+  }
+
+  &.add-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+      width: 50px;
+    }
+  }
+ }
