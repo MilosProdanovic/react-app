@@ -19,6 +19,12 @@ const Cards = ({ data, showPopup, removeUser, copyUser }) => {
           name={card.name}
           lastName={card.lastName}
           age={card.age}
+          removeUser={() => {
+          removeUser(card.id);
+          }}
+          copyUser={() => {
+          copyUser(card.id);
+          }}
         />
       ))}
     </div>

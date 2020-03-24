@@ -56,6 +56,48 @@ class App extends Component {
     });
   };
 
+   removeUser = id => {
+    let users = this.state.data.filter(user => {
+      return user.id !== id;
+    });
+    this.setState({
+      data: users,
+      filteredData: users
+    });
+  };
+
+  copyUser = id => {
+    let copiedUser = {};
+    this.state.data.filter(user => {
+      if (user.id === id) {
+        copiedUser.name = user.name;
+        copiedUser.lastName = user.lastName;
+        copiedUser.age = user.age;
+      }
+      return copiedUser;
+    });
+
+    copiedUser.id = uuid();
+    let newData = [...this.state.data, copiedUser];
+    this.setState({
+      data: newData,
+      filteredData: newData
+    });
+  };
+
+  sortItems = () => {
+    const list = this.state.filteredData;
+    const sorted = list;
+    this.state.direction === true
+      ? list.sort((a, b) => (a.name > b.name ? 1 : -1))
+      : list.sort((a, b) => (a.name < b.name ? 1 : -1));
+    this.setState({
+      filteredData: sorted,
+      direction: !this.state.direction
+    });
+  };
+
+
   componentDidMount() {
     this.setState({
       filteredData: this.state.data
@@ -97,6 +139,8 @@ class App extends Component {
           data={filteredData}
           showPopup={this.showPopup}
           id={this.id}
+          removeUser={this.removeUser}
+          copyUser={this.copyUser}
         />
 
         {popup && <Popup addUser={this.addUser} closePopup={this.closePopup} />}

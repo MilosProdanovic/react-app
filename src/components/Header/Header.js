@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import logo from "../../img/logo.png";
 import { Search } from "../Search/Search";
+import sortIcon from "../../img/sort.png";
 
 const Header = ({ black, search, onPrint, data, onDataFilter, sortItems }) => {
   const renderSearch = () => {
@@ -15,7 +16,10 @@ const Header = ({ black, search, onPrint, data, onDataFilter, sortItems }) => {
   return (
     <header className={`header ${black ? `black` : ``}`}>
       <a href="#"><img src={logo} className="logo" /></a>
-      {renderSearch()}
+      <div>
+        {renderSearch()}
+        <img src={sortIcon} className="sort" alt="sort" onClick={sortItems} />
+      </div>
     </header>
   );
 };

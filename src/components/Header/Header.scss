@@ -20,4 +20,14 @@ header {
   .sort {
     cursor: pointer;
   }
+  div {
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    img {
+      width: 50px;
+    }
+  }
 }

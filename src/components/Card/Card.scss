@@ -6,6 +6,29 @@
   padding: 20px 20px;
   margin: 50px 5px;
 
+  span {
+    color: #053456;
+    font-size: 17px;
+    font-weight: bold;
+    display: block;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 20px 0 0;
+
+  }
+
+  img {
+    width: 40px;
+    border: 1px solid #053456;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
   h3 {
     color: #053456;
   }
